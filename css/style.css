@@ -1,0 +1,47 @@
+
+#contenedor{
+    background-color: cyan;
+    
+}
+
+.datos{
+    display: block;
+    margin: 15px 0px;
+}
+
+input{
+    margin-left: 10px;
+    padding: 5px;
+    
+}
+
+.campo{
+    padding: 2px;
+}
+#dni{
+    margin-left: 49px;
+
+}
+#nombre{
+    margin-left: 20px;
+}
+#tlf{
+    margin-left: 25px;
+}
+
+.zona{     
+    padding-right: 5px;
+}
+
+#titl1{
+    margin: 0px;
+
+}
+#tetl2{
+    margin-top: 15px;
+}
+
+#continente{
+    border: 1px solid dark;
+    margin-top: 20px;
+}
