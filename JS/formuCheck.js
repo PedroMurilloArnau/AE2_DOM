@@ -1,3 +1,52 @@
+function crearFormulario(){
+    let espacnom = document.createElement("br")
+    let espacnom1 = document.createElement("br")
+    let formu = document.createElement("form")
+        formu.id = "form1"
+        formu.action = "urlServidor"
+        formu.method = "get"
+
+    let labnombre = document.createElement("label")
+        labnombre.for = "nombre"
+    let labelnom = document.createTextNode("Nombre del afortunado")
+    labnombre.appendChild(labelnom)
+
+    let imnombre = document.createElement("input")
+        imnombre.type = "text"
+        imnombre.id = "nombre"
+        imnombre.name = "nombre"
+        imnombre.placeholder = "Escribe tu Nombre"
+        imnombre.required = "required"
+
+    let labapellidos = document.createElement("label")
+        labapellidos.for = "apellidos"
+    let labapellidoss = document.createTextNode("Apellidos del afortunado")
+    labapellidos.appendChild(labapellidoss)
+
+    let imapellidos = document.createElement("input")
+        imapellidos.type = "text"
+        imapellidos.id = "nombre"
+        imapellidos.name = "nombre"
+        imapellidos.placeholder = "Escribe tus Apellidos"
+
+    let validar = document.createElement("input")
+        validar.type = "button"
+        validar.name = "action"
+        validar.value = "ProbarDatos"
+        validar.onclick = "validar()"
+
+    formu.appendChild(labnombre)
+    formu.appendChild(imnombre)
+    formu.appendChild(espacnom)
+    formu.appendChild(labapellidos)
+    formu.appendChild(imapellidos)
+    formu.appendChild(espacnom1)
+    formu.appendChild(validar)
+
+    div1.appendChild(formu)
+
+
+}
 function checkbox(){
     
     
@@ -84,14 +133,23 @@ function checkbox(){
     }  
 
 function eliminarNodo(){
+   //let nodos = div1.childNode("formu")
 let nodos = div1.childNodes
     let num = nodos.length
     if(num > 4){
-    nodos[4].remove()
-    
-        
+        for(let a=4;a<num;a++){
+        let nodo = nodos[a]
+        nodo.remove()
+        }  
     }
-    if(num > 5){
-    nodos[5].remove()
+}
+//Nodo existe el 
+
+function validar(){
+    if( nombre.value.trim() == '' ){//eliminar los blancos laterales
+        alert("El nombre es obligatorio")
+    }
+    if( apellidos.value.trim() == '' ){
+        alert("Los apellidos son obligatorios")
     }
 }
