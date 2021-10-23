@@ -1,60 +1,10 @@
-function crearFormulario(){
-    let espacnom = document.createElement("br")
-    let espacnom1 = document.createElement("br")
-    let formu = document.createElement("form")
-        formu.id = "form1"
-        formu.action = "urlServidor"
-        formu.method = "get"
-
-    let labnombre = document.createElement("label")
-        labnombre.for = "nombre"
-    let labelnom = document.createTextNode("Nombre del afortunado")
-    labnombre.appendChild(labelnom)
-
-    let imnombre = document.createElement("input")
-        imnombre.type = "text"
-        imnombre.id = "nombre"
-        imnombre.name = "nombre"
-        imnombre.placeholder = "Escribe tu Nombre"
-        imnombre.required = "required"
-
-    let labapellidos = document.createElement("label")
-        labapellidos.for = "apellidos"
-    let labapellidoss = document.createTextNode("Apellidos del afortunado")
-    labapellidos.appendChild(labapellidoss)
-
-    let imapellidos = document.createElement("input")
-        imapellidos.type = "text"
-        imapellidos.id = "nombre"
-        imapellidos.name = "nombre"
-        imapellidos.placeholder = "Escribe tus Apellidos"
-
-    let validar = document.createElement("input")
-        validar.type = "button"
-        validar.name = "action"
-        validar.value = "ProbarDatos"
-        validar.onclick = "validar()"
-
-    formu.appendChild(labnombre)
-    formu.appendChild(imnombre)
-    formu.appendChild(espacnom)
-    formu.appendChild(labapellidos)
-    formu.appendChild(imapellidos)
-    formu.appendChild(espacnom1)
-    formu.appendChild(validar)
-
-    div1.appendChild(formu)
-
-
-}
 function checkbox(){
-    
-    
-    /*<input type="checkbox" name="pe" value="G" />Gunes <br/>  
-<input type="checkbox" name="pe" value="C" />Carsberg <br/>
-<input type="checkbox" name="pe" value="F" />Fresca <br/>
-<input type="checkbox" name="pe" value="R" />Ricosa <br/>*/
-    //Creo los espaciados entre los elementos de mis check box
+    let nodos = div1.childNodes
+    let num = nodos.length
+    for(let a=4;a<num;a++){
+        let nodo = nodos[a]
+        let namer = nodo.name
+        if( namer = "formulario"){    
     let espac = document.createElement("br")
     let espac1 = document.createElement("br")
     let espac2 = document.createElement("br")
@@ -108,6 +58,7 @@ function checkbox(){
     form5.appendChild(text5)
 
     let fielche = document.createElement("fieldset")
+    fielche.name = "fieldset"
     
     let forml = document.createElement("h2")
 
@@ -129,27 +80,27 @@ function checkbox(){
     fielche.appendChild(espac3)
     fielche.appendChild(input5)
     fielche.appendChild(text5)
-    div1.appendChild(fielche)
-    }  
+    formulario.appendChild(fielche)
+    }
+}
+}
+
 
 function eliminarNodo(){
-   //let nodos = div1.childNode("formu")
-let nodos = div1.childNodes
+    let nodos = div1.childNodes
     let num = nodos.length
-    if(num > 4){
-        for(let a=4;a<num;a++){
-        let nodo = nodos[a]
-        nodo.remove()
-        }  
-    }
+        if(num > 4){
+            for(let a=4;a<num;a++){
+            let nodo = nodos[a]
+            nodo.remove()
+            }  
+        }
 }
-//Nodo existe el 
+/*function nomascheck(){
+    let nodos = div1.childNodes
+    nodos[3].remove()
+}*/
 
-function validar(){
-    if( nombre.value.trim() == '' ){//eliminar los blancos laterales
-        alert("El nombre es obligatorio")
-    }
-    if( apellidos.value.trim() == '' ){
-        alert("Los apellidos son obligatorios")
-    }
-}
+
+
+
